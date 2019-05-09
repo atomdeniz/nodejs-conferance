@@ -128,7 +128,7 @@
     },
     getApiRoot: function () {
         //return "http://localhost:3000/";
-        return "https://tas-manager-demo.opthemateknoloji.com/";
+        return "https://hcm-manager-dev.opthemateknoloji.com/";
     },
     getApiAuthorizationUrl: function () {
         return "https://hcm-api-demo.opthemateknoloji.com/";

@@ -1,12 +1,12 @@
 ﻿"use strict";
 var canRecord = true;
 var socketUrl = '//tas-conference-demo.opthemateknoloji.com/';
-var rootUrl = 'https://tas-manager-demo.opthemateknoloji.com';
-var rootUrlHttp = 'http://tas-manager-demo.opthemateknoloji.com';
+var rootUrl = 'https://hcm-manager-dev.opthemateknoloji.com';
+var rootUrlHttp = 'http://hcm-manager-dev.opthemateknoloji.com';
 
 // var socketUrl = '//10.6.120.217/';
-// var rootUrl = 'https://tas-manager-demo.opthemateknoloji.com';
-// var rootUrlHttp = 'http://tas-manager-demo.opthemateknoloji.com';
+// var rootUrl = 'https://hcm-manager-dev.opthemateknoloji.com';
+// var rootUrlHttp = 'http://hcm-manager-dev.opthemateknoloji.com';
 //var socketUrl = '//localhost:8080/';
 
 var serviceUrl = api.getApiRoot();

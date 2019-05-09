@@ -1052,8 +1052,8 @@ var windowEvents = {
             var imgElements = $('.img-circle.img-notes-profile');
             for (var i = 0; i < imgElements.length; i++) {
                 var obj = imgElements[i];
-                if (obj.style["backgroundImage"].indexOf("http://tas-manager-demo.opthemateknoloji.com:81/") > -1) {
-                    obj.style["backgroundImage"] = obj.style["backgroundImage"].replace("http://tas-manager-demo.opthemateknoloji.com:81/", api.getApiRoot());
+                if (obj.style["backgroundImage"].indexOf("http://hcm-manager-dev.opthemateknoloji.com:81/") > -1) {
+                    obj.style["backgroundImage"] = obj.style["backgroundImage"].replace("http://hcm-manager-dev.opthemateknoloji.com:81/", api.getApiRoot());
                 }
             }
             var elemenst = $("#divTabCvNotlar img");
@@ -1062,8 +1062,8 @@ var windowEvents = {
                 if (obj.src.indexOf("https://10.10.0.121") > -1) {
                     obj.src = obj.src.replace("https://10.10.0.121", api.getApiRoot());
                 }
-                if (obj.src.indexOf("http://tas-manager-demo.opthemateknoloji.com:81/") > -1) {
-                    obj.src = obj.src.replace("http://tas-manager-demo.opthemateknoloji.com:81/", api.getApiRoot());
+                if (obj.src.indexOf("http://hcm-manager-dev.opthemateknoloji.com:81/") > -1) {
+                    obj.src = obj.src.replace("http://hcm-manager-dev.opthemateknoloji.com:81/", api.getApiRoot());
                 }
             }
             $('.chat-input').keypress(function (e) {
@@ -1216,7 +1216,7 @@ var windowEvents = {
 
             windowEvents.getDialogWindow($('#tabcv'), "Aday Bilgileri", w3, hBigBox, '', function (obj) {
                 $("#tabcv").before($("#nav-cv"));
-                var url = "https://tas-manager-demo.opthemateknoloji.com/InterviewApi/GetUserCv/?Path=" + window.credential.UserCv.Path;
+                var url = "https://hcm-manager-dev.opthemateknoloji.com/InterviewApi/GetUserCv/?Path=" + window.credential.UserCv.Path;
 
                 window.credential.userCv = url;
                 // $('#divcvtab').html('<iframe src="https://docs.google.com/viewer?url=http://37.187.3.59/inan_cv.pdf&embedded=true" width="100%" style="min-height:500px;margin:0" id="datauserCv"></iframe>');

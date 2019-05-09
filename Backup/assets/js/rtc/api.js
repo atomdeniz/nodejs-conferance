@@ -127,7 +127,7 @@
         localStorage.setItem("access_token", key);
     },
     getApiRoot: function () {
-        return "https://tas-manager-demo.opthemateknoloji.com/";
+        return "https://hcm-manager-dev.opthemateknoloji.com/";
     },
     getApiAuthorizationUrl: function () {
         return "https://hcm-api-demo.opthemateknoloji.com/";

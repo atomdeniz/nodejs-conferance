@@ -58,7 +58,7 @@
     },
     login: function (element) {
         var formData = element.serialize();
-        var postUrl ='https://tas-manager-demo.opthemateknoloji.com';
+        var postUrl ='https://hcm-manager-dev.opthemateknoloji.com';
         $.ajax({
             type: "POST",
             url: postUrl + "/oauth/token",
@@ -129,10 +129,10 @@
         localStorage.setItem("access_token", key);
     },
     getApiRoot: function () {
-        return 'https://hcm-api-demo.opthemateknoloji.com';
+        return 'https://hcm-manager-dev.opthemateknoloji.com';
     },
     getApiAuthorizationUrl: function () {
-        return "https://tas-manager-demo.opthemateknoloji.com";
+        return "https://hcm-manager-dev.opthemateknoloji.com";
         
     }
 	//return "http://localhost:49559/";
