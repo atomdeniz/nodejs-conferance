@@ -1,0 +1,25 @@
+<service>
+	<id>tasnodeserverservice.exe</id>
+	<name>TAS Node Server Service</name>
+	<description>TAS Node Server Service</description>
+	<executable>C:\Program Files\nodejs\node.exe</executable>
+	<logmode>rotate</logmode>
+	<argument>--harmony</argument>
+	<argument>C:\inetpub\tas-conference-demo\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>--file</argument>
+	<argument>C:\inetpub\tas-conference-demo\server.js</argument>
+	<argument>--log</argument>
+	<argument>TAS Node Server Service wrapper</argument>
+	<argument>--grow</argument>
+	<argument>0.25</argument>
+	<argument>--wait</argument>
+	<argument>1</argument>
+	<argument>--maxrestarts</argument>
+	<argument>3</argument>
+	<argument>--abortonerror</argument>
+	<argument>n</argument>
+	<argument>--stopparentfirst</argument>
+	<argument>undefined</argument>
+	<stoptimeout>30sec</stoptimeout>
+	<workingdirectory>C:\inetpub\tas-conference-demo</workingdirectory>
+</service>

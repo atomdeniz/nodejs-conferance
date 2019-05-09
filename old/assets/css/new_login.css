@@ -1,0 +1,268 @@
+body {
+    /*background-image: url("/assets/images/tas_login_bg.png");*/
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #4b5366;
+    font-family: "LatoWeb","Arial",sans-serif !important;
+}
+
+.input-input {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+    padding: 12px;
+    background-color: #efefef !important;
+    color: gray;
+    border: 0;
+}
+
+.hr-logo {
+    height: 35px;
+    float: left;
+    padding-left: 5px;
+    width: 75%;
+}
+
+.text-initial {
+    text-align: initial;
+}
+
+span, a {
+    color: #fff;
+}
+
+.plr-40 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.pt-25 {
+    padding-top: 25px;
+}
+
+.logo-text {
+    font-size: 22px;
+    color: #d770ef;
+    margin-bottom: 10px;
+    font-weight: bold;
+    float: left;
+    margin-top: 10px;
+    padding-left: 35px;
+}
+
+.box {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 460px;
+    height: 420px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+    /* box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6); */
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    padding: 20px;
+    /*text-align: center;*/
+    /* text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); */
+    background-color: #3e4450;
+    box-shadow: none !important;
+}
+
+h1, h2, a, p {
+    color: white;
+    font-weight: 100;
+}
+
+.box button {
+    background: #b752ce;
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    height: 45px;
+    font-weight: 600;
+    border-radius: 2px;
+    padding: 5px 25px;
+    margin-top: 20px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+    .box button:active {
+        background: #C50BDA;
+    }
+
+    .box input:focus, .box input:active, .box button:focus, .box button:active {
+        outline: none;
+    }
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #E0E0E0 inset;
+}
+
+.mini-icon {
+    width: 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    border-radius: 2px;
+}
+
+    .mini-icon::-webkit-input-placeholder {
+        color: #808080 !important;
+        font-size: 14px;
+    }
+
+.mt-5- {
+    margin-top: -5px;
+}
+
+.remember-me {
+    color: gray;
+}
+
+    .remember-me:hover {
+        color: gray;
+        font-weight: normal;
+    }
+
+#frmLogin {
+    float: left;
+    width: 100%;
+}
+
+.login-username {
+    background-image: url('/assets/images/icon-user-mini.png');
+}
+.login-email {
+    background-image: url('/assets/images/mail-icon-mini.png');
+}
+.login-password {
+    background-image: url('/assets/images/password-icon-mini.png');
+}
+
+.btnForgotPassword {
+    float: right;
+    border-radius: 4px;
+    padding: 5px 25px;
+    margin-top: 20px;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.control-group {
+    display: inline-block;
+    vertical-align: top;
+    background: #fff;
+    text-align: left;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 200px;
+    height: 210px;
+    margin: 10px;
+}
+
+.control {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 13px;
+    color: gray;
+    font-weight: normal;
+}
+
+    .control:hover {
+        /*text-decoration: underline;*/
+    }
+
+    .control input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+.control__indicator {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border: 1px solid #909694 !important;
+    border-radius: 1px;
+}
+
+.control--radio .control__indicator {
+    border-radius: 50%;
+}
+
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+    background-color: #3e4450;
+}
+
+.control input:checked ~ .control__indicator {
+    background: #b752ce;
+}
+
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+    background: #c747e4;
+}
+
+.control input:disabled ~ .control__indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.control__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.control input:checked ~ .control__indicator:after {
+    display: block;
+}
+
+.control--checkbox .control__indicator:after {
+    left: 5px;
+    top: 0.8px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+}
+
+.control--radio .control__indicator:after {
+    left: 7px;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.control--radio input:disabled ~ .control__indicator:after {
+    background: #7b7b7b;
+}
+
+.remember-me {
+    font-size: 13px;
+}

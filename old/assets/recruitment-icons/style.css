@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'recruitment-icons';
+    src: url('fonts/recruitment-icons.eot?q9u3pp');
+    src: url('fonts/recruitment-icons.eot?q9u3pp#iefix') format('embedded-opentype'), url('fonts/recruitment-icons.ttf?q9u3pp') format('truetype'), url('fonts/recruitment-icons.woff?q9u3pp') format('woff'), url('fonts/recruitment-icons.svg?q9u3pp#recruitment-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.recruitment-icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'recruitment-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+    .recruitment-icon.td {
+        font-size: 40px;
+    }
+
+        .recruitment-icon.td.primary {
+            color: #BB54D3
+        }
+
+        .recruitment-icon.td.secondary {
+            color: #555
+        }
+
+        .recruitment-icon.td.success {
+            color: #99c45a
+        }
+
+        .recruitment-icon.td.danger {
+            color: black
+        }
+
+        .recruitment-icon.td.warning {
+            color: #fe6d6c
+        }
+
+        .recruitment-icon.td.info {
+            color: #ffb850
+        }
+
+        .recruitment-icon.td.light {
+            /*color: dodgerblue*/
+        }
+
+        .recruitment-icon.td.dark {
+            /*color: dodgerblue*/
+        }
+
+        .recruitment-icon.td.muted {
+            /*color: dodgerblue*/
+        }
+
+        .recruitment-icon.td.white {
+            /*color: dodgerblue*/
+        }
+
+    .recruitment-icon.select2 {
+        font-size: 30px;
+    }
+        .recruitment-icon.select2.green {
+            color: #5cb85c
+        }
+        .recruitment-icon.select2.red {
+            color: #d9534f
+        }
+
+.recruitment-genel-karaliste:before {
+    content: "\e900";
+}
+
+.recruitment-genel-olumlu-yildiz:before {
+    content: "\e901";
+}
+
+.recruitment-genel-olumsuz:before {
+    content: "\e902";
+}
+
+.recruitment-genel-yorumyok:before {
+    content: "\e903";
+}
+
+.recruitment-ilan-olumluyildiz:before {
+    content: "\e904";
+}
+
+.recruitment-ilan-olumsuz:before {
+    content: "\e905";
+}
+
+.recruitment-ilan-teklifedildi:before {
+    content: "\e906";
+}
+
+.recruitment-ilan-teklifedilecek:before {
+    content: "\e907";
+}
+
+.recruitment-ilan-teklifred:before {
+    content: "\e908";
+}
+
+.recruitment-ilan-teklifred_1:before {
+    content: "\e909";
+}
+
+.recruitment-ilan-teklifrevize:before {
+    content: "\e90a";
+}
+
+.recruitment-ilan-yorumyok:before {
+    content: "\e90b";
+}
+
+.recruitment-mulakat-gerceklesmedi:before {
+    content: "\e90c";
+}
+
+.recruitment-mulakat-olumluyildiz:before {
+    content: "\e90d";
+}
+
+.recruitment-mulakat-olumsuz:before {
+    content: "\e90e";
+}
+
+.recruitment-mulakat-yorumyok:before {
+    content: "\e90f";
+}
+
+.recruitment-genel-isealindi:before {
+    content: "\e910";
+}

@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="tr" style="overflow-x:auto !important">
+
+<head>
+    <base href="/assets/">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>TAS - Mülakat</title>
+    <link rel="icon" type="image/png" href="/assets/images/tas-logo-shortcut.png" />
+    <link rel="shortcut icon" href="/assets/images/tas-logo-shortcut.png">
+</head>
+<link href="/assets/css/bootstrap.css" rel="stylesheet" />
+<style>
+    body {
+        background-image: url("/assets/images/tas_login_bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: "LatoWeb", "Arial", sans-serif !important;
+    }
+
+    .input-input {
+        display: block;
+        width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+        background-color: #efefef !important;
+        color: gray;
+        border: 0;
+    }
+
+    span,
+    a {
+        color: #fff;
+    }
+
+    .box {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .box:active {
+        cursor: move;
+        -moz-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+        -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    }
+
+    h1,
+    h2,
+    a,
+    p {
+        color: white;
+        font-weight: 100;
+    }
+
+    .box button {
+        background: #bc4ed6;
+        border: 0;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        height: 55px;
+        font-weight: 600;
+        border-radius: 4px;
+        padding: 5px 25px;
+        margin-top: 20px;
+        width: 200px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .box button:active {
+        background: #C50BDA;
+    }
+
+    .box input:focus,
+    .box input:active,
+    .box button:focus,
+    .box button:active {
+        outline: none;
+    }
+
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px #E0E0E0 inset;
+    }
+
+    .mini-icon {
+        width: 100%;
+        background-position: right;
+        background-repeat: no-repeat;
+        background-position-x: 97%;
+    }
+</style>
+
+<link href="/assets/fonts/latofonts.css" rel="stylesheet" />
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+<link href="/assets/css/icons.css" rel="stylesheet" type="text/css">
+<link href="/assets/css/tasicon.css" rel="stylesheet" />
+<link href="/assets/css/leftMenuIcons.css" rel="stylesheet" />
+<link href="/assets/tas-icons2/tasicons2.css" rel="stylesheet" />
+<link href="/assets/tas-icons/tas-icons.css" rel="stylesheet" />
+<link href="/assets/pnotify/pnotify.custom.min.css" rel="stylesheet" />
+
+<body>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="width: 100%; display: table; min-height: 100vh;">
+        <div class="box">
+            <form id="frmLogin" method="post" role="form" class="box" style="max-width: 550px;border-radius: 5px;-moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);-webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);border: 1px solid rgba(255, 255, 255, 0.3);padding: 20px;background-color: rgba(64, 64, 64, 0.8);position: relative;margin: 0 auto;display: flex;">
+                <input type="hidden" name="grant_type" value="password" />
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="/assets/images/transparent_logo.png" alt="" style="height: 60px" />
+                    <h1 class="m-0" style="color: #fff;">Talent Assesment Suite</h1>
+                    <input class="input-input mini-icon" type="text" placeholder="Kullanıcı Adı" style="background-image: url('/assets/images/icon-user-mini.png') !important;"
+                        id="username" name="UserName" required/>
+                    <input class="input-input mini-icon" type="password" placeholder="Şifre" style="background-image: url('/assets/images/password-icon-mini.png');"
+                        id="password" name="Password" required/>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
+                        <input style="float: left; margin-top: 13px; margin-left: 0; cursor: pointer" type="checkbox" value="True" id="remember"
+                            name="RememberMe">
+                        <label for="remember" style="color: gray !important; float: left; margin-top: 10px; cursor: pointer">
+                            &nbsp; Beni Hatırla
+                        </label>
+                        <label style="float: right; margin-top: 10px;">
+                            <a href="/tr/Account/ForgotPassword" id="forgotPassword" style="color: gray !important; cursor: pointer;">
+                                Şifremi unuttum.
+                            </a>
+                        </label>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
+                        <button name="btnLogin" type="submit">
+                            GIRIŞ
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="/assets/sweetalert/sweetalert.min.js"></script>
+    <script src="/assets/js/plugin.js"></script>
+    <script src="/assets/js/exam.js"></script>
+    <script src="/assets/js/jquery-ui.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/pnotify/pnotify.custom.min.js"></script>
+    <script src="/assets/js/moment.js"></script>
+    <script src="/assets/js/rtc/api.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#forgotPassword').attr('href', api.getApiRoot() + '/tr/Account/ForgotPassword');
+            $('#frmLogin').submit(function (e) {
+                e.preventDefault();
+                api.login($('#frmLogin'));
+            });
+        });
+    </script>
+</body>
+
+</html>

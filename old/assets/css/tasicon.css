@@ -1,0 +1,318 @@
+﻿@font-face {
+    font-family: 'TasIcon';
+    src: url('../fonts/ikon_sheet.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.tas {
+    display: inline-block;
+    font: normal normal normal 14px/1 TasIcon;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*padding: 5px 5px;*/
+}
+
+/* makes the font 33% larger relative to the icon container */
+.tas-lg {
+    font-size: 1.33333333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+
+.tas-2x {
+    font-size: 2em;
+}
+
+.tas-3x {
+    font-size: 3em;
+}
+
+.tas-4x {
+    font-size: 4em;
+}
+
+.tas-5x {
+    font-size: 5em;
+}
+
+.tas-7x {
+    font-size: 7em;
+}
+
+.tas-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.tas-ul {
+    padding-left: 0;
+    margin-left: 2.14285714em;
+    list-style-type: none;
+}
+
+    .tas-ul > li {
+        position: relative;
+    }
+
+.tas-li {
+    position: absolute;
+    left: -2.14285714em;
+    width: 2.14285714em;
+    top: 0.14285714em;
+    text-align: center;
+}
+
+    .tas-li.tas-lg {
+        left: -1.85714286em;
+    }
+
+.tas-border {
+    padding: .2em .25em .15em;
+    border: solid 0.08em #eeeeee;
+    border-radius: .1em;
+}
+
+.tas-pull-left {
+    float: left;
+}
+
+.tas-pull-right {
+    float: right;
+}
+
+.tas.tas-pull-left {
+    margin-right: .3em;
+}
+
+.tas.tas-pull-right {
+    margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.tas.pull-left {
+    margin-right: .3em;
+}
+
+.tas.pull-right {
+    margin-left: .3em;
+}
+
+.tas-spin {
+    -webkit-animation: tas-spin 2s infinite linear;
+    animation: tas-spin 2s infinite linear;
+}
+
+.tas-pulse {
+    -webkit-animation: tas-spin 1s infinite steps(8);
+    animation: tas-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes tas-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes tas-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.tas-rotate-90 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.tas-rotate-180 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.tas-rotate-270 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.tas-flip-horizontal {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+.tas-flip-vertical {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+    -webkit-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+}
+
+:root .tas-rotate-90,
+:root .tas-rotate-180,
+:root .tas-rotate-270,
+:root .tas-flip-horizontal,
+:root .tas-flip-vertical {
+    filter: none;
+}
+
+.tas-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+}
+
+.tas-stack-1x,
+.tas-stack-2x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.tas-stack-1x {
+    line-height: inherit;
+}
+
+.tas-stack-2x {
+    font-size: 2em;
+}
+
+.tas-inverse {
+    color: #ffffff;
+}
+
+/*Icons*/
+.tas-star {
+    background: url("../fonts/ikon_sheet.svg") -194px -194px;
+    height: 30px;
+    width: 30px;
+}
+
+/*.tas-filter {
+    background: url("../fonts/ikon_sheet.svg") -100px -420px;
+    height: 30px;
+    width: 30px;
+}*/
+
+.tas-history {
+    background: url("../fonts/ikon_sheet.svg") -160px -160px;
+    height: 30px;
+    width: 30px;
+}
+
+.tas-lock {
+    background: url("../fonts/ikon_sheet.svg") -260px -190px;
+    height: 30px;
+    width: 30px;
+}
+
+.tas-preview {
+    background: url("../fonts/ikon_sheet.svg") -260px -220px;
+    height: 30px;
+    width: 30px;
+}
+
+.tas-photo {
+    background: url("../fonts/ikon_sheet.svg") -260px -260px;
+    height: 30px;
+    width: 30px;
+    padding: 10px 20px;
+}
+
+.tas-remove {
+    background: url("../fonts/ikon_sheet.svg") -260px -320px;
+    height: 30px;
+    width: 30px;
+}
+
+.tas-group {
+    background: url("../fonts/ikon_sheet.svg") -190px -540px;
+    height: 30px;
+    width: 30px;
+}
+
+.tas-active {
+    background: url("../fonts/ikon_sheet.svg") -410px -440px;
+    height: 30px;
+    width: 30px;
+}
+
+.tas-inactive {
+    background: url("../fonts/ikon_sheet.svg") -410px -500px;
+    height: 30px;
+    width: 30px;
+}
+
+/*.tas-bell{
+		    background: url("../fonts/ikon_sheet.svg") -198px -38px;
+    height: 20px;
+    width: 20px;
+	}*/
+
+/*.tas-pin{
+		    background: url("../fonts/ikon_sheet.svg") -230px -38px;
+    height: 20px;
+    width: 20px;
+}
+
+.tas-sheet {
+    background: url("../fonts/ikon_sheet.svg") -261px -38px;
+    height: 20px;
+    width: 20px;
+	}*/
+
+.tas-rightArrow {
+    background: url("../fonts/ikon_sheet.svg") -294px -38px;
+    height: 20px;
+    width: 20px;
+}
+
+.tas-home {
+    background: url("../fonts/ikon_sheet.svg") -326px -38px;
+    height: 20px;
+    width: 20px;
+}
+
+.tas-comment {
+    background: url("../fonts/ikon_sheet.svg") -326px -453px;
+    height: 20px;
+    width: 20px;
+}
+
+.tas-calculator {
+    background: url("../fonts/ikon_sheet.svg") -37px -387px;
+    height: 20px;
+    width: 20px;
+}

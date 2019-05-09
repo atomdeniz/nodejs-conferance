@@ -1,0 +1,297 @@
+.pdf-data {
+    width: 100%;
+    float: left;
+}
+
+.pdf-container {
+    /* width: 400px; */
+    float: left;
+}
+
+.pdf-click-container {
+    width: 97%;
+    position: absolute;
+    cursor: crosshair;
+}
+
+.pdf-zoom-controls {
+    position: fixed;
+    width: 42px;
+    height: 190px;
+    bottom: 100px;
+    right: 65px;
+    z-index: 9999;
+}
+
+.pdf-button-padding {
+    width: 40px;
+    height: 40px;
+    margin-left: 1px;
+    margin-top: 10px;
+    border: none;
+}
+
+.pdf-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-left: 1px;
+    margin-top: 10px;
+    background-color: #f2f2f2;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: .2s ease-in all;
+}
+
+
+    .pdf-button:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+.pin-area input {
+    position: absolute;
+    z-index: 99;
+    width: 220px;
+    left: 64%;
+    margin-left: -180px;
+    bottom: 31px;
+    text-align: left;
+    background: #fafafa;
+    font-size: 14px;
+    line-height: 27px;
+    padding: 1.5em;
+    color: #333;
+    border-radius: 0;
+    -webkit-transform: translate3d(0, -.5em, 0);
+    transform: translate3d(0, -.5em, 0);
+    -webkit-transition: opacity .3s, -webkit-transform .3s;
+    transition: opacity .3s, transform .3s;
+    border: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.pin-area .pin-save-button {
+    background-image: none;
+    width: 220px;
+    border: none;
+    padding: 10px;
+    color: #fafafa;
+    margin-left: -110px;
+    border-radius: 0 0 10px 10px;
+}
+
+.pin-content {
+    position: absolute;
+    color: #ff9500;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.pin-comment-area {
+    position: absolute;
+    left: 40px;
+    top: -15px;
+    display: none;
+    z-index: 99;
+    width: 200px;
+    cursor: pointer;
+}
+
+    .pin-comment-area:before {
+        content: '';
+        width: 9px;
+        height: 12px;
+        position: absolute;
+        top: 16px;
+        display: block;
+        left: -18px;
+        border-top: solid 12px transparent;
+        border-bottom: solid 12px transparent;
+        border-left: solid 6px transparent;
+        border-right: solid 12px rgb(51, 184, 108);
+    }
+
+.comment-photo {
+    width: 40px;
+    height: 40px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    border-radius: 6px;
+    background-size: cover;
+    cursor: default;
+}
+
+.pin-comment-remove {
+    display: block;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    width: 20px;
+    height: 20px;
+    background-color: #33b86c;
+    color: white;
+    text-align: center;
+    z-index: 999;
+    padding-top: 1px;
+    padding-left: 1px;
+    border-radius: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pin-content:hover .pin-comment-area {
+    display: block;
+}
+
+.pdf-pin-container.show-all .pin-content .pin-comment-area {
+    display: block;
+}
+
+.pin-content .pin-comment-area label.pin-comment-data,
+.pin-content .pin-comment-area label.pin-comment-owner {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.pin-content:hover .pin-comment-area label.pin-comment-data {
+    position: relative;
+    width: 200px;
+    min-height: 60px;
+    height: auto;
+    text-align: left;
+    font-size: 14px;
+    -webkit-transition: opacity .3s, -webkit-transform .3s;
+    transition: opacity .3s, transform .3s;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #525252;
+    padding: 5px;
+    padding-top: 8px;
+    z-index: 99;
+    cursor: text;
+    background: #fff;
+    font-family: 'Nunito', sans-serif;
+}
+
+.pin-content:hover .pin-comment-area label.pin-comment-owner {
+    background-image: none;
+    width: 300px;
+    border: none;
+    padding: 7px;
+    color: white;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    font-family: sans-serif;
+    height: 30px;
+    font-size: 0.5em;
+    z-index: 99;
+}
+
+.pdf-pin-container.show-all .pin-content .pin-comment-area label.pin-comment-data {
+    position: absolute;
+    width: 220px;
+    height: auto;
+    left: 64%;
+    margin-left: -229px;
+    bottom: 27px;
+    text-align: left;
+    background: #fafafa;
+    font-size: 14px;
+    line-height: 27px;
+    -webkit-transform: translate3d(0, -.5em, 0);
+    transform: translate3d(0, -.5em, 0);
+    -webkit-transition: opacity .3s, -webkit-transform .3s;
+    transition: opacity .3s, transform .3s;
+    border-radius: 10px 10px 0 0;
+    overflow: auto;
+    color: #333;
+    padding: 15px;
+}
+
+.pdf-pin-container.show-all .pin-content .pin-comment-area label.pin-comment-owner {
+    background-image: none;
+    width: 300px;
+    border: none;
+    padding: 7px;
+    color: white;
+    margin-left: -103px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    font-family: sans-serif;
+    height: 30px;
+    font-size: 0.5em;
+}
+
+
+.pin-content.pin-active .pin-comment-area {
+    display: block;
+}
+
+    .pin-content.pin-active .pin-comment-area label.pin-comment-data {
+        position: relative;
+        width: 200px;
+        min-height: 60px;
+        height: auto;
+        text-align: left;
+        font-size: 14px;
+        -webkit-transition: opacity .3s, -webkit-transform .3s;
+        transition: opacity .3s, transform .3s;
+        border-radius: 10px;
+        overflow: hidden;
+        color: #525252;
+        padding: 5px;
+        padding-top: 8px;
+        z-index: 99;
+        cursor: text;
+        background: #fff;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .pin-content.pin-active .pin-comment-area label.pin-comment-owner {
+        background-image: none;
+        width: 300px;
+        border: none;
+        padding: 7px;
+        color: white;
+        margin-left: -103px;
+        border-radius: 0 0 10px 10px;
+        text-align: center;
+        font-family: sans-serif;
+        height: 30px;
+        font-size: 0.5em;
+        z-index: 99;
+        cursor: pointer;
+    }
+
+.pin-comment-data {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+
+input.pin-data {
+    bottom: -10px !important;
+}
+
+
+.pin-comment-move:before {
+    content: "\f0b2" !important;
+}
+
+.pin-comment-area-move {
+    display: unset !important;
+    cursor: move;
+}
+
+    .pin-comment-area-move .pin-data {
+        display: none;
+    }
+
+    .pin-comment-area-move .pin-save-button {
+        display: none;
+    }

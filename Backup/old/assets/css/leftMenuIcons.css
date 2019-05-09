@@ -1,0 +1,300 @@
+﻿@font-face {
+    font-family: 'LeftMenuIcon';
+    src: url('../fonts/kunye_ikonlari.svg')format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.lm {
+    display: inline-block;
+    font: normal normal normal 14px/1 LeftMenuIcon;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+   /*padding: 5px 5px;*/
+
+}
+
+/* makes the font 33% larger relative to the icon container */
+.lm-lg {
+    font-size: 1.33333333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+
+.lm-2x {
+    font-size: 2em;
+}
+
+.lm-3x {
+    font-size: 3em;
+}
+
+.lm-4x {
+    font-size: 4em;
+}
+
+.lm-5x {
+    font-size: 5em;
+}
+
+.lm-7x {
+    font-size: 7em;
+}
+
+.lm-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.lm-ul {
+    padding-left: 0;
+    margin-left: 2.14285714em;
+    list-style-type: none;
+}
+
+    .lm-ul > li {
+        position: relative;
+    }
+
+.lm-li {
+    position: absolute;
+    left: -2.14285714em;
+    width: 2.14285714em;
+    top: 0.14285714em;
+    text-align: center;
+}
+
+    .lm-li.lm-lg {
+        left: -1.85714286em;
+    }
+
+.lm-border {
+    padding: .2em .25em .15em;
+    border: solid 0.08em #eeeeee;
+    border-radius: .1em;
+}
+
+.lm-pull-left {
+    float: left;
+}
+
+.lm-pull-right {
+    float: right;
+}
+
+.lm.lm-pull-left {
+    margin-right: .3em;
+}
+
+.lm.lm-pull-right {
+    margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.lm.pull-left {
+    margin-right: .3em;
+}
+
+.lm.pull-right {
+    margin-left: .3em;
+}
+
+.lm-spin {
+    -webkit-animation: lm-spin 2s infinite linear;
+    animation: lm-spin 2s infinite linear;
+}
+
+.lm-pulse {
+    -webkit-animation: lm-spin 1s infinite steps(8);
+    animation: lm-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes lm-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes lm-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.lm-rotate-90 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.lm-rotate-180 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.lm-rotate-270 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.lm-flip-horizontal {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+.lm-flip-vertical {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+    -webkit-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+}
+
+:root .lm-rotate-90,
+:root .lm-rotate-180,
+:root .lm-rotate-270,
+:root .lm-flip-horizontal,
+:root .lm-flip-vertical {
+    filter: none;
+}
+
+.lm-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+}
+
+.lm-stack-1x,
+.lm-stack-2x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.lm-stack-1x {
+    line-height: inherit;
+}
+
+.lm-stack-2x {
+    font-size: 2em;
+}
+
+.lm-inverse {
+    color: #ffffff;
+}
+
+/*Icons*/
+.lm-manager{
+		background: url("../fonts/kunye_ikonlari.svg") 0 0;
+    height: 132px;
+    width: 130px;
+}
+
+.lm-users{
+		background:url("../fonts/kunye_ikonlari.svg") -160px -155px;
+		height:140px;
+		width:140px;
+	}
+
+.lm-questions{
+		    background: url("../fonts/kunye_ikonlari.svg") -320px -159px;
+    height: 130px;
+    width: 129px;
+	}
+
+.lm-exams{
+	background: url("../fonts/kunye_ikonlari.svg") -480px -159px;
+    height: 137px;
+    width: 129px;
+	}
+
+.lm-qualifications{
+		    background: url("../fonts/kunye_ikonlari.svg") 0px -315px;
+    height: 137px;
+    width: 129px;
+	}
+
+.lm-groups{
+		    background: url("../fonts/kunye_ikonlari.svg") -160px -315px;
+    height: 137px;
+    width: 129px;
+	}
+
+.lm-departments{
+		    background: url("../fonts/kunye_ikonlari.svg") -319px -315px;
+    height: 137px;
+    width: 129px;
+	}
+
+.lm-interview{
+		    background: url("../fonts/kunye_ikonlari.svg") -480px -315px;
+    height: 137px;
+    width: 129px;
+	}
+
+.lm-performans{
+		    background: url("../fonts/kunye_ikonlari.svg") 0px -476px;
+    height: 137px;
+    width: 129px;
+	}
+
+.lm-roles{
+		    background: url("../fonts/kunye_ikonlari.svg") -157px -476px;
+    height: 137px;
+    width: 129px;
+	}
+
+.lm-candidates{
+		    background: url("../fonts/kunye_ikonlari.svg") 0px -155px;
+    height: 137px;
+    width: 129px;
+	}
+
+.lm-cost{
+		    background: url("../fonts/kunye_ikonlari.svg") -160px 5px;
+    height: 137px;
+    width: 129px;
+	}
+
+.lm-performans2{
+		    background: url("../fonts/kunye_ikonlari.svg") -320px 5px;
+    height: 137px;
+    width: 129px;
+	}
+
+.lm-examplace{
+		    background: url("../fonts/kunye_ikonlari.svg") -480px 5px;
+    height: 137px;
+    width: 129px;
+	}
