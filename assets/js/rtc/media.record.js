@@ -376,7 +376,7 @@ var serverEvents = {
                 allowOutsideClick: false,
                 allowEscapeKey: false,
                 allowEnterKey: false,
-                timer: 10000,
+                timer: 5000,
                 onBeforeOpen: () =>{
                     timerInterval = setInterval(() => {
                         Swal.getContent().querySelector('strong')
