@@ -366,6 +366,7 @@ var serverEvents = {
             swal({
                 title: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır.',
                 text: 'Tam ekranda devam etmek ister misiniz?',
+                html: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır',
                 showConfirmButton: true,
                 confirmButtonColor: '#BB54D3',
                 confirmButtonText: 'Evet',
@@ -399,7 +400,8 @@ var serverEvents = {
             );
         } else {
             swal({
-                title: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır.',
+                title: 'Kayıt hazırlanıyor',
+                html: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır',
                 showConfirmButton: false,
                 showCancelButton: false,
                 allowOutsideClick: false,
