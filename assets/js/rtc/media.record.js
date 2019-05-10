@@ -364,7 +364,7 @@ var serverEvents = {
                 }, 5000);
             }
             swal({
-                title: 'Kayıt 5 saniye içerisinde başlayacaktır.',
+                title: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır.',
                 text: 'Tam ekranda devam etmek ister misiniz?',
                 showConfirmButton: true,
                 confirmButtonColor: '#BB54D3',
@@ -373,7 +373,13 @@ var serverEvents = {
                 cancelButtonText: 'Hayır',
                 allowOutsideClick: false,
                 allowEscapeKey: false,
-                allowEnterKey: false
+                allowEnterKey: false,
+                onBeforeOpen: function() {
+                    timerInterval = setInterval(() => {
+                    Swal.getContent().querySelector('strong')
+                      .textContent = (Swal.getTimerLeft() / 1000)
+                        .toFixed(0)
+                  }, 100)}
             }).then(
                 function (dismiss) {
                     if (dismiss === 'cancel') {} else {
@@ -393,7 +399,7 @@ var serverEvents = {
             );
         } else {
             swal({
-                title: 'Kayıt 5 saniye içerisinde başlayacaktır.',
+                title: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır.',
                 showConfirmButton: false,
                 showCancelButton: false,
                 allowOutsideClick: false,
@@ -402,7 +408,13 @@ var serverEvents = {
                 timer: 5000,
                 onOpen: function () {
                     swal.showLoading();
-                }
+                },
+                onBeforeOpen:function () {
+                    timerInterval = setInterval(() => {
+                    Swal.getContent().querySelector('strong')
+                      .textContent = (Swal.getTimerLeft() / 1000)
+                        .toFixed(0)
+                  }, 100)}
             });
         }
 
