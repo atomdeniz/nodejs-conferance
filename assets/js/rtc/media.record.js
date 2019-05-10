@@ -1471,19 +1471,21 @@ var windowEvents = {
             }
         }
 
+        windowEvents.showBigVideo(user, stream, streamId);
 
-        if (user.InterviewCredentialTypes === 1 && (window.credential.InterviewCredentialTypes === 2 || window.credential.InterviewCredentialTypes === 3)) {
-            //Eğer ben mülakat sorumlusu veya dinleyiciysem aday büyük olmalı.
-            windowEvents.showBigVideo(user, stream, streamId);
-        } else if (user.InterviewCredentialTypes === 2 && window.credential.InterviewCredentialTypes === 1) {
-            //Eğer ben adaysam ve gelen görüntü mülakat sorumlusuysa mülakat sorumlusu büyük olmalı.
-            windowEvents.showBigVideo(user, stream, streamId);
-        } else {
-            //Diğer kullanıcı durumları için bu kutucuk kullanılacak.
-            console.log('Küçük geldi.')
+        //Duruma göre büyük küçük kaldırıldı
+        // if (user.InterviewCredentialTypes === 1 && (window.credential.InterviewCredentialTypes === 2 || window.credential.InterviewCredentialTypes === 3)) {
+        //     //Eğer ben mülakat sorumlusu veya dinleyiciysem aday büyük olmalı.
+        //     windowEvents.showBigVideo(user, stream, streamId);
+        // } else if (user.InterviewCredentialTypes === 2 && window.credential.InterviewCredentialTypes === 1) {
+        //     //Eğer ben adaysam ve gelen görüntü mülakat sorumlusuysa mülakat sorumlusu büyük olmalı.
+        //     windowEvents.showBigVideo(user, stream, streamId);
+        // } else {
+        //     //Diğer kullanıcı durumları için bu kutucuk kullanılacak.
+        //     console.log('Küçük geldi.')
 
-            windowEvents.showMiniVideo(user, stream, streamId);
-        }
+        //     windowEvents.showMiniVideo(user, stream, streamId);
+        // }
 
         streamSources.push(obj);
     },
