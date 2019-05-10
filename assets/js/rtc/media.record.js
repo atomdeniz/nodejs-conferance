@@ -1556,7 +1556,7 @@ var windowEvents = {
     showBigVideo: function (user, stream, streamId) {
         var containerelement =document.getElementById('user-video-container-' + streamId);
         if (containerelement) {           
-            $('user-video-container-' + streamId).remove();
+            $('#user-video-container-' + streamId).remove();
         }
         var t = 165,
             l = 35,
