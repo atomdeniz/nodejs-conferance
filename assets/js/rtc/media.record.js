@@ -1,4 +1,9 @@
 ﻿"use strict";
+
+import {
+    debug
+} from "util";
+
 var canRecord = true;
 var rootUrl = 'https://hcm-manager-dev.opthemateknoloji.com';
 var rootUrlHttp = 'http://hcm-manager-dev.opthemateknoloji.com';
@@ -377,11 +382,12 @@ var serverEvents = {
                 allowEscapeKey: false,
                 allowEnterKey: false,
                 timer: 5000,
-                onBeforeOpen: () =>{
+                onBeforeOpen: () => {
                     timerInterval = setInterval(() => {
                         Swal.getContent().querySelector('strong')
-                      .textContent = (Swal.getTimerLeft() / 1000).toFixed(0)
-                  }, 100)}
+                            .textContent = (Swal.getTimerLeft() / 1000).toFixed(0)
+                    }, 100)
+                }
             }).then(
                 function (dismiss) {
                     if (dismiss === 'cancel') {} else {
@@ -410,12 +416,13 @@ var serverEvents = {
                 allowEscapeKey: false,
                 allowEnterKey: false,
                 timer: 5000,
-                onBeforeOpen:() => {
+                onBeforeOpen: () => {
                     Swal.showLoading();
                     timerInterval = setInterval(() => {
                         Swal.getContent().querySelector('strong').textContent = (Swal.getTimerLeft() / 1000)
-                        .toFixed(0)
-                  }, 100)}
+                            .toFixed(0)
+                    }, 100)
+                }
             });
         }
 
@@ -1554,7 +1561,10 @@ var windowEvents = {
         multiStreamRecorder.start(3000);
     },
     showBigVideo: function (user, stream, streamId) {
-       
+        debugger;
+        if (document.getElementById('user-video-container-' + streamId)) {
+            $('user-video-container-' + streamId).remove();
+        }
         var t = 165,
             l = 35,
             w = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 490,
@@ -1565,9 +1575,7 @@ var windowEvents = {
             w, h, '',
             function (obj) {
                 $('[aria-describedby="big-video-area"] span.ui-dialog-title').html('<span><i class="fa fa-camera"></i>&nbsp&nbsp' + user.Name + '<span>')
-                if (document.getElementById('user-video-container-' + streamId)) {
-                    $('user-video-container-' + streamId).remove();
-                }
+
                 var videoContainer = document.getElementById('big-video-area');
 
                 var thumbnailElement = document.createElement('div');
@@ -1601,10 +1609,10 @@ var windowEvents = {
                     var total_big = $('[aria-describedby="big-video-area"]').height() + 230 + 295;
                     var total_video = $('[aria-describedby="big-video-area"]').height() + 230;
                     var big = $('[aria-describedby="big-video-area"]').height();
-                        $('[aria-describedby="my-video-area"]').css('top', big + 190);
-                        friends.forEach(connection => {
-                            $('[aria-describedby="listener-container-' + connection.socketId + '"]').css('top', big + 190);
-                            $('[aria-describedby="listener-container-' + connection.socketId + '"]').click();
+                    $('[aria-describedby="my-video-area"]').css('top', big + 190);
+                    friends.forEach(connection => {
+                        $('[aria-describedby="listener-container-' + connection.socketId + '"]').css('top', big + 190);
+                        $('[aria-describedby="listener-container-' + connection.socketId + '"]').click();
                     });
                     // if (total_big > h && total_video > h) {
                     //     console.log("Video full sağda diğerleri");
