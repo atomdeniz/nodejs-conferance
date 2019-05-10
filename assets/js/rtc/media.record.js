@@ -705,181 +705,9 @@ var serverEvents = {
 };
 
 var socketEvents = {
-    //     done: function () {
-    //         windowEvents.drawUsers();
-    //         windowEvents.drawBoxes();
-
-    //         chat.server.checkUser(window.credential);
-    //         chat.server.checkUsers(window.credential.RoomKey);
-
-    //         connection = new RTCMultiConnection(window.credential.RoomKey);
-    //         connection.sessionid = window.credential.UserKey;
-    //         connection.socketURL = socketUrl;
-
-    //         connection.enableFileSharing = false;
-    //         connection.session = {
-    //             audio: true,
-    //             video: true,
-    //             data: true
-    //         };
-
-    //         connection.sdpConstraints.mandatory = {
-    //             OfferToReceiveAudio: true,
-    //             OfferToReceiveVideo: true
-    //         };
-
-    //         connection.videosContainer = document.getElementById('videos-container');
-
-    //         connection.onstream = socketEvents.onStream;
-    //         connection.onstatechange = socketEvents.onStateChange;
-    //         connection.onUserIdAlreadyTaken = socketEvents.onUserIdAlreadyTaken;
-    //         connection.onopen = socketEvents.onOpen;
-    //         connection.onclose = socketEvents.onClose;
-    //         connection.onmessage = socketEvents.onMessage;
-    //         connection.filesContainer = document.getElementById('file-container');
-    //         connection.onEntireSessionClosed = socketEvents.onEntireSessionClosed;
-    //         connection.onExtraDataUpdated = function (event) {
-    //             console.log('Extra data updated');
-    //             console.log(event);
-    //         }
-
-    //         console.log(connection);
-
-    //         window.credential.videoId = '';
-    //     },
     disconnected: function () {
         chat.server.checkUsers(window.credential.RoomKey);
     },
-    //     onStream: function (event) {
-    //         console.log('event onstream *************************************');
-
-    //         var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    //         var w3 = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    //         var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    //         w = parseInt(w) - 80;
-    //         var ww = Math.floor((w / 100) * 34);
-    //         var ww2 = Math.floor((w / 100) * 69);
-    //         var lw = Math.floor((w / 100) * 29);
-
-
-    //         var ww3 = Math.floor((w / 100 / 2) * 30);
-
-    //         mediaStream = event.stream;
-    //         event.mediaElement.removeAttribute('controls');
-    //         connection.videosContainer.appendChild(event.mediaElement);
-    //         // console.log('event on stream');
-    //         // console.log(event);
-
-    //         if (isAdded === false) {
-    //             streams.push(event.stream);
-    //             isAdded = true;
-    //         } else {
-    //             var audioContext = new AudioContext();
-    //             var isRecord = true;
-    //             var audioSources = [];
-
-    //             var audioTracksLength = 0;
-
-    //             if (!event.stream.getAudioTracks().length) {
-    //                 isRecord = false;
-    //             }
-
-    //             audioTracksLength++;
-
-    //             audioSources.push(audioContext.createMediaStreamSource(event.stream));
-
-    //             if (!audioTracksLength) {
-    //                 isRecord = false;
-    //             }
-
-    //             var audioDestination = audioContext.createMediaStreamDestination();
-    //             audioSources.forEach(function (audioSource) {
-    //                 audioSource.connect(audioDestination);
-    //             });
-    //             if (isRecord)
-    //                 streams.push(audioDestination.stream);
-    //         }
-
-    //         mediaElements.push(event.mediaElement);
-    //         console.log(event.extra);
-    //         $('#' + event.mediaElement.id).wrap("<div style='width:100%!important' class='videocontent " +
-    //             window.credential.Color +
-    //             "'></div>");
-
-    //         //İlk stream kullanıcının kendisi oluyor.
-    //         var mainStreamId = connection.attachStreams[0].streamid;
-    //         window.chatHub.server.updateVideoId(
-    //             window.credential.RoomKey,
-    //             window.credential.UserId,
-    //             mainStreamId
-    //         );
-
-    //         //Geçici olarak videoyu gizle.
-    //         $('#' + event.mediaElement.id).hide();
-
-    //         //Oynatma sorunları olduğu için gecikmeli oynat.
-    //         setTimeout(function () {
-    //             event.mediaElement.play();
-    //             setTimeout(function () {
-    //                 event.mediaElement.play();
-    //             }, 5000);
-    //         }, 1500);
-    //     },
-    //     onStateChange: function (state) {},
-    //     onUserIdAlreadyTaken: function (useridAlreadyTaken, yourNewUserId) {
-    //         // seems room is already opened
-    //         connection.join(useridAlreadyTaken);
-    //     },
-    //     onOpen: function () {
-    //         connection.updateExtraData(window.credential);
-    //         // connection.extra.userid = window.credential.UserId;
-    //         // document.querySelector('h1').innerHTML = 'You are connected with: ' + connection.getAllParticipants().join(', ');
-    //     },
-    //     onClose: function () {
-    //         if (connection.getAllParticipants().length) {
-    //             console.log('connection.getAllParticipants()');
-    //             // document.querySelector('h1').innerHTML = 'You are still connected with: ' + connection.getAllParticipants().join(', ');
-    //         } else {
-    //             // document.querySelector('h1').innerHTML = 'Seems session has been closed or all participants left.';
-    //         }
-    //     },
-    //     onMessage: function (event) {
-    //         var div = document.createElement('div');
-    //         div.innerHTML = event.data || event;
-    //         chatContainer.insertBefore(div, chatContainer.firstChild);
-    //         div.tabIndex = 0;
-    //         div.focus();
-    //         document.getElementById('input-text-chat').focus();
-    //     },
-    //     onEntireSessionClosed: function (event) {
-    //         connection.attachStreams.forEach(function (stream) {
-    //             stream.stop();
-    //         });
-
-    //         // don't display alert for moderator
-    //         if (connection.userid === event.userid) return;
-    //         // document.querySelector('h1').innerHTML = 'Entire session has been closed by the moderator: ' + event.userid;
-    //     },
-    //     muteAll: function () {
-    //         for (var i = 0; i < mediaElements.length; i++) {
-    //             var mElement = mediaElements[i];
-    //             mElement.muted = true;
-    //         }
-    //     },
-    //     muteMe: function () {
-    //         var myVideoId = '';
-    //         window.userVideos.forEach(function (userVideo) {
-    //             if (window.credential.UserId === userVideo.userId) {
-    //                 myVideoId = userVideo.videoId;
-    //             }
-    //         });
-
-    //         for (var i = 0; i < mediaElements.length; i++) {
-    //             var mElement = mediaElements[i];
-    //             if (mElement.id === myVideoId)
-    //                 mElement.muted = true;
-    //         }
-    //     }
 };
 
 var windowEvents = {
@@ -996,35 +824,9 @@ var windowEvents = {
         chat.server.checkUsers(window.credential.RoomKey);
     },
     startInterview: function () {
-
         //Bu method sadece manager tarafında interview durumunu güncellemek için ve mobil uygulamaya bilgi vermek için açık tutuluyor.
         //Callback tarafına ihtiyacımız yok.
         window.chatHub.server.joinInterview(window.credential.RoomKey);
-
-        // if (!windowEvents.checkStart()) {
-        //     swal('Görüşme başlatılamadı', 'Mülakatın başlaması için Aday ve Mülakat sorumlusu bağlı olmalıdır.', 'error');
-        //     return;
-        // };
-
-        // if (window.credential.InterviewCredentialTypes !== 2) {
-        //     swal('Görüşme başlatılamadı', 'Mülakatın başlaması için mülakat sorumlusunun onayı gerekmektedir.', 'error');
-        //     return;
-        // }
-        // window.chatHub.server.joinInterview(window.credential.RoomKey);
-
-        //Tam ekrana geçir
-        //TODO Tam ekran mevzusuna tekrar bakılması gerekli.
-        //var elem = document.getElementById("start-interview");
-        // var elem = document.getElementsByName("body");
-        // if (elem.requestFullscreen) {
-        //     elem.requestFullscreen();
-        // } else if (elem.msRequestFullscreen) {
-        //     elem.msRequestFullscreen();
-        // } else if (elem.mozRequestFullScreen) {
-        //     elem.mozRequestFullScreen();
-        // } else if (elem.webkitRequestFullscreen) {
-        //     elem.webkitRequestFullscreen();
-        // }
     },
     startRecord: function () {
         window.chatHub.server.startRecord(window.credential.RoomKey);
@@ -1106,16 +908,6 @@ var windowEvents = {
         var hMidBox = 455;
 
         var userHeight = h - t1 - 65;
-        //var userHeight = window.credential.Users.length;
-        //if (h < 650) {
-        //    userHeight = 150 * 2 + 15;
-        //    hBigBox = 530;
-        //    hMidBox = 280;
-        //} else if (userHeight > 3) {
-        //    userHeight = 150 * 3;
-        //} else {
-        //    userHeight = 150 * userHeight;
-        //}
 
         var datas = {
             r: api.getQueryString("r"),
@@ -1246,14 +1038,6 @@ var windowEvents = {
                 });
             });
 
-            // $.each(window.credential.SubQuals, function () {
-            //     $('#qual_' + this.Id + '_' + this.RefKey).rating(function (vote, g) {
-            //         var qId = $(g.target).data('qualid');
-            //         $('#vote_' + qId).val(vote);
-            //         addQualificationVote(window.credential.InterviewId, qId, vote);
-            //     });
-            // });
-
             /* Yekinlikler - Notlar*/
             //qualification-body-general
             $.each(window.credential.UserNotes, function () {
@@ -1313,14 +1097,9 @@ var windowEvents = {
 
             windowEvents.getDialogWindow($('#tabcv'), "Aday Bilgileri", w3, hBigBox, '', function (obj) {
                 $("#tabcv").before($("#nav-cv"));
-                var url = rootUrl + "/InterviewApi/GetUserCv/?Path=" + window.credential.UserCv.Path;
+                var url = rootUrl + "/Domain/GetFileFromMinio/?Path=" + window.credential.UserCv.Path;
 
                 window.credential.userCv = url;
-                // $('#divcvtab').html('<iframe src="https://docs.google.com/viewer?url=http://37.187.3.59/inan_cv.pdf&embedded=true" width="100%" style="min-height:500px;margin:0" id="datauserCv"></iframe>');
-                // $('#divcvtab').html('<iframe src="' + api.getApiRoot() + '/Interview/uploads/cv/inan_cv.pdf" type="application/pdf" width="100%" style="min-height:500px;margin:0" id="datauserCv"></iframe>');
-                // $('#divcvtab').html('<object data="' + api.getApiRoot() + '/Interview/uploads/cv/inan_cv.pdf" type="application/pdf" width="100%" style="min-height:500px;margin:0" id="datauserCv"></object>');
-                // $('#divcvtab').html('<embed src="' + api.getApiRoot() + '/Interview/uploads/cv/inan_cv.pdf" type="application/pdf" width="100%" style="min-height:500px;margin:0" id="datauserCv"></embed>');
-                // $('#divcvtab').html('<object data="inan_cv.html" type="text/html" width="100%" style="min-height:500px;margin:0" id="datauserCv"></object>');
                 if (window.credential.UserNotes != null) {
                     $('#divcvtab').html('<div class="pdf-zoom-controls">\
                     <button class="pdf-button" id="pdf-button-tag-marking"><i class="fa fa-commenting"></i></button>\
@@ -1437,16 +1216,6 @@ var windowEvents = {
         var hMidBox = 455;
 
         var userHeight = h - t1 - 65;
-        //var userHeight = window.credential.Users.length;
-        //if (h < 650) {
-        //    userHeight = 150 * 2 + 15;
-        //    hBigBox = 530;
-        //    hMidBox = 280;
-        //} else if (userHeight > 3) {
-        //    userHeight = 150 * 3;
-        //} else {
-        //    userHeight = 150 * userHeight;
-        //}
 
         $('.record-area').css('width', w0);
         // $('.record-area').css('margin-top', '-20px');
@@ -1869,25 +1638,6 @@ var windowEvents = {
 
             }, t, l, 300);
     },
-    // showApplyerVideoForListener: function () {
-    //     var t = 165,
-    //         l = 35,
-    //         w = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 490,
-    //         h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 490;
-    //     $('#applyer-video').show();
-    //     windowEvents.getDialogWindow($('#applyer-video-area'),
-    //         window.credential.UserName,
-    //         w, h, '',
-    //         function (obj) {
-    //             $('[aria-describedby="applyer-video-area"] span.ui-dialog-title').html('<span><i class="fa fa-camera"></i>&nbsp&nbsp' + windowEvents.getUserNameByType("1") + '<span>')
-    //             $('#applyer-video').html('<iframe id="applyer-video-iframe" class="rtc" width="100%" height="100%" src="https://tas-conference-demo.opthemateknoloji.com/html/video.html?r=' + window.credential.ListenerSingleUseKey + '&hd=false&vsc=H264&vrc=H264"></iframe>');
-    //         }, t, l, 300);
-    // },
-    // getApplyerRTC: function () {
-    //     var iframe = document.getElementById('applyer-video-iframe');
-    //     var iframewindow = iframe.contentWindow ? iframe.contentWindow : iframe.contentDocument.defaultView;
-    //     return iframewindow.appController;
-    // },
     onUserLeft: function (streamId, user) {
 
         //streamSources
@@ -1973,28 +1723,6 @@ var windowEvents = {
                 $('#listener-container-' + streamId).css('height', 'unset');
             }, t, l, 300);
     },
-    // showAdminVideo: function () {
-    //     var t = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 305,
-    //         l = 370,
-
-    //         w = 320,
-
-    //         h = 240;
-
-    //     $('#listener-video').show();
-    //     windowEvents.getDialogWindow($('#listener-video-area'),
-    //         window.credential.UserName,
-    //         w, h, '',
-    //         function (obj) {
-    //             $('[aria-describedby="listener-video-area"] span.ui-dialog-title').html('<span><i class="fa fa-camera"></i>&nbsp&nbsp' + windowEvents.getUserNameByType("2") + '<span>')
-    //             $('#listener-video').html('<iframe id="listener-video-iframe" class="rtc" width="100%" height="100%" src="https://tas-conference-demo.opthemateknoloji.com/html/video.html?r=' + window.credential.AdminSingleUseKey + '&hd=false&vsc=H264&vrc=H264"></iframe>');
-    //         }, t, l, 300);
-    // },
-    // getListenerRTC: function () {
-    //     var iframe = document.getElementById('listener-video-iframe');
-    //     var iframewindow = iframe.contentWindow ? iframe.contentWindow : iframe.contentDocument.defaultView;
-    //     return iframewindow.appController;
-    // },
     updateVideoContainers: function () {
         var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         w = parseInt(w) - 80;
