@@ -363,6 +363,7 @@ var serverEvents = {
             //         windowEvents.recorderStart();
             //     }, 5000);
             // }
+            let timerInterval;
             Swal.fire({
                 title: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır.',
                 text: 'Tam ekranda devam etmek ister misiniz?',
@@ -399,6 +400,7 @@ var serverEvents = {
                 }
             );
         } else {
+            let timerInterval;
             Swal.fire({
                 title: 'Kayıt hazırlanıyor',
                 html: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır',
