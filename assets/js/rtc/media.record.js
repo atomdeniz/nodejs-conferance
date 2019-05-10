@@ -1539,6 +1539,7 @@ var windowEvents = {
         multiStreamRecorder.start(3000);
     },
     showBigVideo: function (user, stream, streamId) {
+        debugger;
         var t = 165,
             l = 35,
             w = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 490,
@@ -1619,7 +1620,7 @@ var windowEvents = {
             }, t, l, 300);
     },
     onUserLeft: function (streamId, user) {
-
+        debugger;
         //streamSources
         let streamSource = streamSources.filter(streamSource => streamSource.userKey == user)[0];
 
@@ -1659,6 +1660,7 @@ var windowEvents = {
     },
 
     showMiniVideo: function (user, stream, streamId) {
+        debugger;
         var t = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 305,
             l = 370,
             w = 320,
