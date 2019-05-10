@@ -381,10 +381,13 @@ var serverEvents = {
                     timerInterval = setInterval(() => {
                         Swal.getContent().querySelector('strong')
                       .textContent = (Swal.getTimerLeft() / 1000).toFixed(0)
-                  }, 100)}
+                  }, 100)},
+                  onClose: () => {
+                    clearInterval(timerInterval)
+                  }
             }).then(
-                function (dismiss) {
-                    if (dismiss === 'cancel') {} else {
+                function (result) {
+                    if (result.dismiss === Swal.DismissReason.cancel) {} else {
                         document.getElementById("btn-fullscreen").click();
                         // var elem = document.getElementById('interview-join-btn');
                         // if (elem.requestFullscreen) {
@@ -415,7 +418,10 @@ var serverEvents = {
                     timerInterval = setInterval(() => {
                         Swal.getContent().querySelector('strong').textContent = (Swal.getTimerLeft() / 1000)
                         .toFixed(0)
-                  }, 100)}
+                  }, 100)},
+                  onClose: () => {
+                    clearInterval(timerInterval)
+                  }
             });
         }
 
