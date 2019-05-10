@@ -1,13 +1,7 @@
 ﻿"use strict";
 var canRecord = true;
-var socketUrl = '//tas-conference-demo.opthemateknoloji.com/';
 var rootUrl = 'https://hcm-manager-dev.opthemateknoloji.com';
 var rootUrlHttp = 'http://hcm-manager-dev.opthemateknoloji.com';
-
-// var socketUrl = '//10.6.120.217/';
-// var rootUrl = 'https://hcm-manager-dev.opthemateknoloji.com';
-// var rootUrlHttp = 'http://hcm-manager-dev.opthemateknoloji.com';
-//var socketUrl = '//localhost:8080/';
 
 var serviceUrl = api.getApiRoot();
 var resizefunc = [];
@@ -209,12 +203,10 @@ $(document).ready(function () {
                 connection.disconnected(error);
             };
 
-            //$.connection.hub.url = serviceUrl + '/signalr/hubs';
             $.connection = {
                 hub: connection,
                 interviewHub: connection
             };
-            //socket = io.connect(socketUrl);
 
             chat = $.connection.interviewHub;
 
@@ -370,18 +362,6 @@ var serverEvents = {
                 setTimeout(() => {
                     windowEvents.recorderStart();
                 }, 5000);
-
-                // setTimeout(function () {
-                //     //socketEvents.muteMe();
-                //     windowEvents.updateStreamsForRecording();
-                //     RecorderHelper.StartRecording({
-                //         Socket: socket,
-                //         FileName: randomString,
-                //         roomId: 'room-' + window.credential.RoomKey,
-                //         userId: 'user-' + window.credential.UserKey,
-                //         UploadInterval: 3 * 1000
-                //     }, null, streams);
-                // }, 5000);
             }
             swal({
                 title: 'Kayıt 5 saniye içerisinde başlayacaktır.',
@@ -447,12 +427,7 @@ var serverEvents = {
                 join(roomId, name, function () {
                     console.log("Join Completed");
                 });
-                //}, 2000);
             }, 1000);
-            // } else if (credentialData.InterviewCredentialTypes === 3) {
-            //     setTimeout(function () {
-            //         windowEvents.showApplyerVideoForListener();
-            //     }, 100);
         }
         if (isStarted) {
             if (credentialData.InterviewCredentialTypes !== 2) {
@@ -1097,7 +1072,7 @@ var windowEvents = {
 
             windowEvents.getDialogWindow($('#tabcv'), "Aday Bilgileri", w3, hBigBox, '', function (obj) {
                 $("#tabcv").before($("#nav-cv"));
-                var url = rootUrl + "/Domain/GetFileFromMinio/?Path=" + window.credential.UserCv.Path;
+                var url = rootUrl + "/Domain/GetFileFromMinio/?id=" + window.credential.UserCv.Path;
 
                 window.credential.userCv = url;
                 if (window.credential.UserNotes != null) {
@@ -1607,31 +1582,36 @@ var windowEvents = {
 
                     var total_big = $('[aria-describedby="big-video-area"]').height() + 230 + 295;
                     var total_video = $('[aria-describedby="big-video-area"]').height() + 230;
-
-                    if (total_big > h && total_video > h) {
-                        console.log("Video full sağda diğerleri");
-                        $('[aria-describedby="big-video-area"]').css("height", h - 230);
-                        $('#big-video-area').css("height", h - 230);
-
-                        $('[aria-describedby="my-video-area"]').css('top', h - 355);
-                        $('[aria-describedby="my-video-area"]').css('left', videoW + 90);
-                        var left = videoW + 90 + 260;
-                        friends.forEach(connection => {
-                            $('[aria-describedby="listener-container-' + connection.socketId + '"]').css('top', h - 355);
-                            $('[aria-describedby="listener-container-' + connection.socketId + '"]').css('left', left);
-                            $('[aria-describedby="listener-container-' + connection.socketId + '"]').click();
-                            left += 260;
-                        });
-                    } else if (total_video > h) {
-                        console.log("videoyu küçült alta diğerlerini koy");
-                    } else {
-                        var big = $('[aria-describedby="big-video-area"]').height();
+                    var big = $('[aria-describedby="big-video-area"]').height();
                         $('[aria-describedby="my-video-area"]').css('top', big + 190);
                         friends.forEach(connection => {
                             $('[aria-describedby="listener-container-' + connection.socketId + '"]').css('top', big + 190);
                             $('[aria-describedby="listener-container-' + connection.socketId + '"]').click();
-                        });
-                    }
+                    });
+                    // if (total_big > h && total_video > h) {
+                    //     console.log("Video full sağda diğerleri");
+                    //     $('[aria-describedby="big-video-area"]').css("height", h - 230);
+                    //     $('#big-video-area').css("height", h - 230);
+
+                    //     $('[aria-describedby="my-video-area"]').css('top', h - 355);
+                    //     $('[aria-describedby="my-video-area"]').css('left', videoW + 90);
+                    //     var left = videoW + 90 + 260;
+                    //     friends.forEach(connection => {
+                    //         $('[aria-describedby="listener-container-' + connection.socketId + '"]').css('top', h - 355);
+                    //         $('[aria-describedby="listener-container-' + connection.socketId + '"]').css('left', left);
+                    //         $('[aria-describedby="listener-container-' + connection.socketId + '"]').click();
+                    //         left += 260;
+                    //     });
+                    // } else if (total_video > h) {
+                    //     console.log("videoyu küçült alta diğerlerini koy");
+                    // } else {
+                    //     var big = $('[aria-describedby="big-video-area"]').height();
+                    //     $('[aria-describedby="my-video-area"]').css('top', big + 190);
+                    //     friends.forEach(connection => {
+                    //         $('[aria-describedby="listener-container-' + connection.socketId + '"]').css('top', big + 190);
+                    //         $('[aria-describedby="listener-container-' + connection.socketId + '"]').click();
+                    //     });
+                    // }
 
                     windowEvents.setWindowOrder();
                 }, 5000);
