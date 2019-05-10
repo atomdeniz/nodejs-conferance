@@ -357,12 +357,12 @@ var serverEvents = {
     startRecord: function () {
         //Kayıt işemine başla kullanıcıyı uyar.
         if (window.credential.InterviewCredentialTypes === 2) {
-            if (windowEvents.checkStart() === true) {
+            // if (windowEvents.checkStart() === true) {
 
-                setTimeout(() => {
-                    windowEvents.recorderStart();
-                }, 5000);
-            }
+            //     setTimeout(() => {
+            //         windowEvents.recorderStart();
+            //     }, 5000);
+            // }
             swal({
                 title: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır.',
                 text: 'Tam ekranda devam etmek ister misiniz?',
@@ -375,11 +375,11 @@ var serverEvents = {
                 allowOutsideClick: false,
                 allowEscapeKey: false,
                 allowEnterKey: false,
+                timer: 10000,
                 onBeforeOpen: function() {
                     timerInterval = setInterval(() => {
-                    Swal.getContent().querySelector('strong')
-                      .textContent = (Swal.getTimerLeft() / 1000)
-                        .toFixed(0)
+                        swal.getContent().querySelector('strong')
+                      .textContent = (swal.getTimerLeft() / 1000).toFixed(0)
                   }, 100)}
             }).then(
                 function (dismiss) {
@@ -409,12 +409,12 @@ var serverEvents = {
                 allowEnterKey: false,
                 timer: 5000,
                 onOpen: function () {
-                    swal.showLoading();
+                    
                 },
                 onBeforeOpen:function () {
+                    swal.showLoading();
                     timerInterval = setInterval(() => {
-                    Swal.getContent().querySelector('strong')
-                      .textContent = (Swal.getTimerLeft() / 1000)
+                    swal.getContent().querySelector('strong').textContent = (swal.getTimerLeft() / 1000)
                         .toFixed(0)
                   }, 100)}
             });
