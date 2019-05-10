@@ -1,10 +1,4 @@
 ﻿"use strict";
-<<<<<<< HEAD
-=======
-
-import { debug } from "util";
-
->>>>>>> fc2be190b9ec7a7538f171db54e770c4c8cec6bc
 var canRecord = true;
 var rootUrl = 'https://hcm-manager-dev.opthemateknoloji.com';
 var rootUrlHttp = 'http://hcm-manager-dev.opthemateknoloji.com';
