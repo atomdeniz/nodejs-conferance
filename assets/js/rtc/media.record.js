@@ -363,7 +363,7 @@ var serverEvents = {
             //         windowEvents.recorderStart();
             //     }, 5000);
             // }
-            swal({
+            Swal.fire({
                 title: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır.',
                 text: 'Tam ekranda devam etmek ister misiniz?',
                 html: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır',
@@ -376,10 +376,10 @@ var serverEvents = {
                 allowEscapeKey: false,
                 allowEnterKey: false,
                 timer: 10000,
-                onBeforeOpen: function() {
+                onBeforeOpen: () =>{
                     timerInterval = setInterval(() => {
-                        swal.getContent().querySelector('strong')
-                      .textContent = (swal.getTimerLeft() / 1000).toFixed(0)
+                        Swal.getContent().querySelector('strong')
+                      .textContent = (Swal.getTimerLeft() / 1000).toFixed(0)
                   }, 100)}
             }).then(
                 function (dismiss) {
@@ -399,7 +399,7 @@ var serverEvents = {
                 }
             );
         } else {
-            swal({
+            Swal.fire({
                 title: 'Kayıt hazırlanıyor',
                 html: 'Kayıt <strong></strong> saniye içerisinde başlayacaktır',
                 showConfirmButton: false,
@@ -408,13 +408,10 @@ var serverEvents = {
                 allowEscapeKey: false,
                 allowEnterKey: false,
                 timer: 5000,
-                onOpen: function () {
-                    
-                },
-                onBeforeOpen:function () {
-                    swal.showLoading();
+                onBeforeOpen:() => {
+                    Swal.showLoading();
                     timerInterval = setInterval(() => {
-                    swal.getContent().querySelector('strong').textContent = (swal.getTimerLeft() / 1000)
+                        Swal.getContent().querySelector('strong').textContent = (Swal.getTimerLeft() / 1000)
                         .toFixed(0)
                   }, 100)}
             });
