@@ -1554,7 +1554,9 @@ var windowEvents = {
         multiStreamRecorder.start(3000);
     },
     showBigVideo: function (user, stream, streamId) {
-       
+        if (document.getElementById('user-video-container-' + streamId)) {
+                    
+        }
         var t = 165,
             l = 35,
             w = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 490,
@@ -1565,9 +1567,7 @@ var windowEvents = {
             w, h, '',
             function (obj) {
                 $('[aria-describedby="big-video-area"] span.ui-dialog-title').html('<span><i class="fa fa-camera"></i>&nbsp&nbsp' + user.Name + '<span>')
-                if (document.getElementById('user-video-container-' + streamId)) {
-                    
-                }
+                
                 var videoContainer = document.getElementById('big-video-area');
 
                 var thumbnailElement = document.createElement('div');
