@@ -792,7 +792,7 @@ var windowEvents = {
                 if (this.Photo === null) {
                     uText = userText.replace("@userPhoto@", api.getApiRoot() + credential.EmptyUserPhoto);
                 } else {
-                    uText = userText.replace("@userPhoto@", api.getApiRoot() + this.Photo);
+                    uText = userText.replace("@userPhoto@", api.getApiRoot() + "/Domain/GetFileFromMinio?id=" +this.Photo);
 
                 }
 
