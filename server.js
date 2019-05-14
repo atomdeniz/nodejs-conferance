@@ -5,11 +5,8 @@
  * Feb 12, 2017
  */
 
-/*var converterServerAddress = '10.10.0.146';
-var converterServerPort = 82; */
 var converterServerAddress = '10.10.0.63';
 var converterServerPort = 4455; 
-//var uploadDir = '/root/rewebrtc-server/ups/';
 var uploadDir = 'C:\\inetpub\\tas-conference-demo\\ups\\';
 
 var socket2 = null;
@@ -27,18 +24,15 @@ var httpsOptions = {
 var formidable = require('formidable');
 const crypto = require("crypto");
 
-var useSSL = false;
-var serverPort = 0;
+let isLocal = process.env.PORT == null;
+var serverPort = (process.env.PORT  || 83);
 var server = null;
-
-if (useSSL) {
-  serverPort = 4443;
+if (isLocal) {
   server = require('https').createServer(httpsOptions, app);
 } else {
-  serverPort = 83;
   server = require('http').createServer(app);
 }
-
+var io = require('socket.io')(server);
 //server = require('http').createServer(app);
 
 
@@ -82,10 +76,10 @@ app.get('/draw', function (req, res) {
 
 app.post('/record', function (req, res) {
 
-  var form = new formidable.IncomingForm()
-  form.multiples = true
-  form.keepExtensions = true
-  form.uploadDir = uploadDir
+  var form = new formidable.IncomingForm();
+  form.multiples = true;
+  form.keepExtensions = true;
+  form.uploadDir = uploadDir;
   var fileName = '';
   var dataKey = crypto.randomBytes(16).toString("hex");
   form.parse(req, (err, fields, files) => {
@@ -118,14 +112,8 @@ app.post('/record', function (req, res) {
           roomId: "room-" + fields.roomKey,
           userId: "user-" + fields.userKey
         };
-
-        // var socketData = {
-        //   data: socketFile
-        // };
         socket2.emit('postFile', socketFile);
       });
-
-
     }
     res.status(200).json({
       uploaded: true
@@ -203,8 +191,7 @@ io.on('connection', function (socket) {
     //broadcast
     friends.forEach((friend) => {
       io.sockets.connected[friend.socketId].emit("join", {
-        socketId: socket.id,
-        name
+        socketId: socket.id,name
       });
     });
     console.log('Join: ', joinData);
@@ -223,21 +210,10 @@ io.on('connection', function (socket) {
   });
 
 });
-
-
 // function to encode file data to base64 encoded string
 function base64_encode(file) {
   // read binary data
   var bitmap = fs.readFileSync(file);
   // convert binary data to base64 encoded string
   return new Buffer(bitmap).toString('base64');
-}
-
-// function to create file from base64 encoded string
-function base64_decode(base64str, file) {
-  // create buffer object from base64 encoded string, it is important to tell the constructor that the string is base64 encoded
-  var bitmap = new Buffer(base64str, 'base64');
-  // write buffer to file
-  fs.writeFileSync(file, bitmap);
-  console.log('******** File created from base64 encoded string ********');
 }
