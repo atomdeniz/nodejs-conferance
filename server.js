@@ -24,15 +24,17 @@ var httpsOptions = {
 var formidable = require('formidable');
 const crypto = require("crypto");
 
-let isLocal = process.env.PORT == null;
-var serverPort = (process.env.PORT  || 83);
+var useSSL = false;
+var serverPort = 0;
 var server = null;
-if (isLocal) {
+
+if (useSSL) {
+  serverPort = 4443;
   server = require('https').createServer(httpsOptions, app);
 } else {
+  serverPort = 83;
   server = require('http').createServer(app);
 }
-var io = require('socket.io')(server);
 //server = require('http').createServer(app);
 
 
